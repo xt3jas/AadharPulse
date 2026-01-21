@@ -19,6 +19,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual environments
 venv/
@@ -32,6 +33,7 @@ env/
 *.swp
 *.swo
 *~
+*.bak
 
 # Testing
 .pytest_cache/
@@ -40,10 +42,31 @@ htmlcov/
 .tox/
 .nox/
 
-# Data directories (Lakehouse layers)
-data/bronze/
-data/silver/
-data/gold/
+# ----------------------------------------
+# PROJECT SPECIFIC (AadharPulse)
+# ----------------------------------------
+
+# Streamlit (CRITICAL for security)
+.streamlit/secrets.toml
+# You generally WANT to commit .streamlit/config.toml, so we don't ignore the whole folder
+
+# Data Directories (Lakehouse layers)
+# Changed to ignore the entire data root to catch temp folders/files
+data/
+
+# Global Data File Exclusions
+# Prevents accidental commits of data files dropped in root or other folders
+*.csv
+*.parquet
+*.json
+*.xlsx
+*.xlsm
+*.tsv
+
+# Delta Lake internals (Safety net)
+_delta_log/
+
+# ----------------------------------------
 
 # Environment
 .env
@@ -70,3 +93,11 @@ docs/_build/
 *.temp
 tmp/
 temp/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Databases (If you use local SQLite for testing)
+*.db
+*.sqlite3
