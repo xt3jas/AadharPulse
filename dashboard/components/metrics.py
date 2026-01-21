@@ -249,13 +249,13 @@ def render_recommendation_card(
     grain = get_grain_overlay()
     
     if ovs > 4.0:
-        gradient = 
+        gradient = "red"
         status = "TEMPORARY CAMP DETECTED"
     elif ovs < 0.5:
-        gradient = 
+        gradient = "green"
         status = "PERMANENT CENTER"
     else:
-        gradient = 
+        gradient = "blue"
         status = "NORMAL OPERATIONS"
     
     st.markdown(f, unsafe_allow_html=True)

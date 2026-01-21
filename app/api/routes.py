@@ -24,7 +24,7 @@ router = APIRouter()
     response_model=IngestResponse,
     status_code=status.HTTP_201_CREATED,
     summary="Ingest CSV file",
-    description=
+    description="Upload a CSV file for processing"
 )
 async def ingest_file(
     file: UploadFile = File(..., description="CSV file to ingest"),
@@ -237,7 +237,7 @@ async def get_ingestion_stats() -> dict:
 @router.get(
     "/v3/intel/synthesis",
     summary="Synthesis View - Executive Dashboard",
-    description=
+    description="Returns high-level synthesis metrics for the command center"
 )
 async def get_synthesis_intel() -> dict:
     
@@ -283,7 +283,7 @@ async def get_synthesis_intel() -> dict:
 @router.get(
     "/v3/pillars/growth",
     summary="Growth Pillar - Enrolment Intelligence",
-    description=
+    description="Returns insights related to enrolment growth and coverage"
 )
 async def get_growth_pillar() -> dict:
     
@@ -323,7 +323,7 @@ async def get_growth_pillar() -> dict:
 @router.get(
     "/v3/pillars/compliance",
     summary="Compliance Pillar - Biometric Intelligence",
-    description=
+    description="Returns insights related to biometric updates and compliance"
 )
 async def get_compliance_pillar() -> dict:
     
@@ -370,7 +370,7 @@ async def get_compliance_pillar() -> dict:
 @router.get(
     "/v3/pillars/hygiene",
     summary="Hygiene Pillar - Demographic Intelligence",
-    description=
+    description="Returns insights related to demographic updates and data hygiene anomalies"
 )
 async def get_hygiene_pillar() -> dict:
     

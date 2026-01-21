@@ -26,7 +26,7 @@ def create_app() -> FastAPI:
     
     app = FastAPI(
         title=settings.APP_NAME,
-        description=,
+        description="AadharPulse Operational Intelligence Platform",
         version=settings.APP_VERSION,
         docs_url="/docs",
         redoc_url="/redoc",
