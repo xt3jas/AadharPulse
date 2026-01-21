@@ -1,0 +1,37 @@
+# AadharPulse - Aadhar Operational Intelligence Platform
+# Core dependencies for Lakehouse architecture
+
+# === Data Processing ===
+polars>=0.20.0           # Rust-based DataFrame library for high-performance processing
+deltalake>=0.15.0        # Delta Lake Python bindings for ACID transactions
+
+# === Web Framework ===
+fastapi>=0.109.0         # High-performance async REST API framework
+uvicorn[standard]>=0.27.0  # ASGI server for FastAPI
+python-multipart>=0.0.6  # File upload support for FastAPI
+
+# === Data Validation ===
+pydantic>=2.5.0          # Data validation using Python type annotations
+pydantic-settings>=2.1.0 # Environment variable management
+
+# === Machine Learning ===
+scikit-learn>=1.4.0      # K-Means clustering, Isolation Forest for anomaly detection
+
+# === Visualization ===
+streamlit>=1.30.0        # Interactive dashboard framework
+altair>=5.2.0            # Declarative statistical visualization
+seaborn>=0.13.0          # Statistical data visualization
+matplotlib>=3.8.0        # Core plotting library
+
+# === Documentation ===
+mkdocs>=1.5.0            # Project documentation generator
+mkdocs-material>=9.5.0   # Material theme for MkDocs
+
+# === Testing ===
+pytest>=8.0.0            # Testing framework
+pytest-asyncio>=0.23.0   # Async test support
+httpx>=0.26.0            # Async HTTP client for API testing
+
+# === Utilities ===
+python-dateutil>=2.8.0   # Date parsing utilities
+pyarrow>=15.0.0          # Arrow support (required by deltalake/polars)
